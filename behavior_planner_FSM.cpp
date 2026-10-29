@@ -157,9 +157,9 @@ State BehaviorPlannerFSM::state_transition(const State& ego_state, State goal,
       // that we know we are in nominal state and we can continue freely?
       // Remember that the speed is a vector
       // HINT: _speed_limit * std::sin/cos (goal.rotation.yaw);
-      goal.velocity.x = 1.0;  // <- Fix This
-      goal.velocity.y = 1.0;  // <- Fix This
-      goal.velocity.z = 0;
+      goal.velocity.x = _speed_limit * std::cos(goal.rotation.yaw);  // <- FixED This
+      goal.velocity.y = _speed_limit * std::sin(goal.rotation.yaw);  // <- FixED This
+      goal.velocity.z = 0.0; // <- FixED This (0.0 instead of 0)
     }
 
   } else if (_active_maneuver == DECEL_TO_STOP) {
