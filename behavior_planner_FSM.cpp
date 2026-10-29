@@ -2,6 +2,8 @@
  * Self-Driving Car Nano-degree - Udacity
  *  Created on: September 20, 2020
  *      Author: Munir Jojo-Verge
+ *  Revised v2.0 on: October 29, 2026
+ *      Author: Kwame A. Ofori
  **********************************************/
 
 /**
