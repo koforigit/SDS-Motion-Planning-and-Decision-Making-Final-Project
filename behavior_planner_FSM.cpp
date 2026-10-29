@@ -139,8 +139,9 @@ State BehaviorPlannerFSM::state_transition(const State& ego_state, State goal,
       // use cosine and sine to get x and y
       //
       auto ang = goal.rotation.yaw + M_PI;
-      goal.location.x += 1.0;  // <- Fix This
-      goal.location.y += 1.0;  // <- Fix This
+      auto _stop_line_buffer = 1.0;
+      goal.location.x += (std::cos(ang))*_stop_line_buffer;  // <- FixED This
+      goal.location.y += (std::sin(ang))*_stop_line_buffer;  // <- FixED This
 
       // LOG(INFO) << "BP- new STOP goal at: " << goal.location.x << ", "
       //          << goal.location.y;
